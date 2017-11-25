@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from model import *
  
 app = Flask(__name__)
 
@@ -10,6 +11,7 @@ def home():
 def store():
     return render_template('store.html')
 
-@app.route('/devices')
+@app.route('/devices/<user_id>')
 def devices():
-    return render_template('devices.html')
+	devices_list=select_all_devices_from_user(user_id=user_id)
+    return render_template('devices.html', devices=devices_list)

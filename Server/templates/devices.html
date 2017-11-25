@@ -8,14 +8,12 @@
 	<p>Configure your devices and connect them with applications. Refresh the page to list new devices.</p>
 </div>
 <div class="row">
-	<div class="col-sm">
-		<p>Device1</p>
-	</div>
-	<div class="col-sm">
-		<p>Device2</p>
-	</div>
-	<div class="col-sm">
-		<p>Device3</p>
-	</div>
+	{{devices[0]}}
+	{% for device in devices.iteritems() %}
+		<div class="col-sm">
+			<p>Name: {{device['name] }}</p>
+			<p>Status: {{device['status']}}</p>
+		</div>
+	{% endfor %}
 </div>
 {% endblock %}
