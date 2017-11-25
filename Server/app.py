@@ -9,3 +9,7 @@ def home():
 @app.route('/store')
 def store():
     return render_template('store.html')
+
+@app.route('/devices')
+def devices():
+    return render_template('devices.html')
