@@ -8,11 +8,10 @@
 	<p>Configure your devices and connect them with applications. Refresh the page to list new devices.</p>
 </div>
 <div class="row">
-	{{devices[0]}}
-	{% for device in devices.iteritems() %}
+	{% for device in devices %}
 		<div class="col-sm">
-			<p>Name: {{device['name] }}</p>
-			<p>Status: {{device['status']}}</p>
+			<p>Name: {{device[1] }}</p>
+			<p>Status: {{device[2]}}</p>
 		</div>
 	{% endfor %}
 </div>

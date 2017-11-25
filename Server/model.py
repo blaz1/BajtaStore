@@ -1,6 +1,6 @@
 import sqlite3
 
-db_conn = sqlite3.connect('Database/db-bajtastore.db')
+db_conn = sqlite3.connect('/home/BajtaStore/ServerDatabase/db-bajtastore.db')
 
 def select_all_apps():
 	cur = db_conn.cursor()

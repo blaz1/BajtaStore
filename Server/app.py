@@ -12,6 +12,6 @@ def store():
     return render_template('store.html')
 
 @app.route('/devices/<user_id>')
-def devices():
-    devices_list=select_all_devices_from_user(user_id=user_id)
+def devices(user_id):
+    devices_list=select_all_devices_from_user(user_id)
     return render_template('devices.html', devices=devices_list)
