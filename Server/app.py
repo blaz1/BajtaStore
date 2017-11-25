@@ -8,8 +8,8 @@ app = Flask(__name__)
 def home(user_id):
 	if user_id is not None:
 		apps_list=select_all_apps_from_user(user_id)
-	else
-		apps_list=NaN
+	else:
+		apps_list=None
     return render_template('home.html', apps=apps_list)
 
 @app.route('/store')
