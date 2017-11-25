@@ -11,7 +11,13 @@
 	{% for device in devices %}
 		<div class="col-sm">
 			<p>Name: {{device[1] }}</p>
-			<p>Status: {{device[2]}}</p>
+			<p>Status: 
+				{% if(device[2] == 1) %} 
+					active 
+				{% else %} 
+					inactive
+				{% endif %}
+			</p>
 		</div>
 	{% endfor %}
 </div>
