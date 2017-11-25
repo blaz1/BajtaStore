@@ -14,5 +14,6 @@ nav {
 	padding: 1.3em;
 	background: lightblue;
 	border-radius: 1em;
-	margin-right: 1em;
+	margin: 1em 1em 1em 0;
+	max-width: 31%;
 }
