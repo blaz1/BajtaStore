@@ -10,7 +10,7 @@ def select_all_apps():
 	return rows
 
 def select_all_apps_from_user(user_id):
-	cur = db_conn.cursor(user_id)
+	cur = db_conn.cursor()
 	cur.execute("SELECT * FROM apps a LEFT JOIN users_apps ua ON ua.app_id = a.id WHERE ua.user_id=?", user_id)
 
 	rows = cur.fetchall()
