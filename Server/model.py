@@ -10,7 +10,7 @@ def select_all_apps():
 	return s.execute("SELECT * FROM apps").fetchall()
 
 def select_all_apps_from_user(user_id):
-	return s.execute("SELECT * FROM apps a LEFT JOIN users_has_apps ua ON ua.apps_id = a.id WHERE ua.users_id=?", user_id).fetchall()
+	return s.execute("SELECT * FROM apps a LEFT JOIN users_apps ua ON ua.app_id = a.id WHERE ua.user_id=?", user_id).fetchall()
 
 def select_all_devices_from_user(user_id):
-	return s.execute("SELECT * FROM devices WHERE users_id=?", user_id).fetchall()
+	return s.execute("SELECT * FROM devices WHERE user_id=?", user_id).fetchall()
