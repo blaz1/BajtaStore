@@ -13,13 +13,13 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="{{ url_for('home')}}">BajtaStore</a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div>
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="{{ url_for('home')}}">Home</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Store</a>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('store')}}">Store</a>
             </li>
           </ul>
         </div>
