@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/<user_id>')
 def home(user_id):
-	if (user_id is not null)
+	if user_id is not None
 		apps_list=select_all_apps_from_user(user_id)
 	else
 		apps_list=NaN
