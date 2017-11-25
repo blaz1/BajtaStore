@@ -9,3 +9,10 @@ footer {
 nav {
 	background-color: #99afe8;
 }
+
+.device {
+	padding: 1.3em;
+	background: lightblue;
+	border-radius: 1em;
+	margin-right: 1em;
+}
