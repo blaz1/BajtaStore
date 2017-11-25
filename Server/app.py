@@ -7,5 +7,5 @@ def home():
     return render_template('home.html')
 
 @app.route('/store')
-def home():
+def store():
     return render_template('store.html')
