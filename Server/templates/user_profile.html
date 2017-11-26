@@ -7,7 +7,7 @@
 <div class="row">
 	<div>
 		<p>Name: {{user[1]}}</p>
-		<img src="blaz_artac.png" />
+		<img src="{{ url_for('static', filename = 'blaz_artac.png') }}" />
 	</div>
 	<p>Email: {{user[2]}}</p>
 	<p>Telephone: {{user[3]}}</p>
