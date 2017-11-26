@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+ 
+{% block container %}
+<div class="row">
+	<h2>My profile</h2>
+</div>
+<div class="row">
+	<div>
+		<p>Name: {{user[1]}}</p>
+		<img src="blaz_artac.png" />
+	</div>
+	<p>Email: {{user[2]}}</p>
+	<p>Telephone: {{user[3]}}</p>
+</div>
+{% endblock %}

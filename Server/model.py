@@ -37,6 +37,13 @@ def select_device_data(device_id):
 	rows = cur.fetchall()
 	return rows
 
+def select_user(user_id):
+	cur = db_conn.cursor()
+	cur.execute("SELECT * FROM users WHERE user_id=?", user_id)
+
+	rows = cur.fetchone()
+	return rows
+
 def insert_device_data(device_id, json_data):
 	cur = db_conn.cursor()
 	new_device_data_id = len(cur.execute("SELECT * FROM device_data").fetchall()) + 1
@@ -45,5 +52,5 @@ def insert_device_data(device_id, json_data):
 
 def update_device_status(device_name, status):
 	cur = db_conn.cursor()
-	cur.execute("UPDATE devices SET status=? WHERE name=?", status, device_name)
+	cur.execute("UPDATE devices SET status=? WHERE name=?", (status, device_name)
 	db_conn.commit()

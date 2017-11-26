@@ -28,6 +28,11 @@ def device(user_id, device_id):
 	device_data_object=select_device_data(device_id)
 	return render_template('device.html', device=device_object, device_data=device_data_object)
 
+@app.route('/user/<user_id>')
+def device(user_id):
+	user_object=select_user(user_id)
+	return render_template('user_profile.html', user=user_object)
+
 @app.route('/devices/data/<device_id>', methods=['POST'])
 def devices_data(device_id):
 	data = request.get_json()
