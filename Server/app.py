@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from model import *
+import json
  
 app = Flask(__name__)
 
@@ -26,7 +27,9 @@ def devices(user_id):
 def device(user_id, device_id):
 	device_object=select_device(device_id)
 	device_data_object=select_device_data(device_id)
-	return render_template('device.html', device=device_object, device_data=device_data_object)
+	print(device_data_object)
+	json_str=json.loads(device_data_object)
+	return render_template('device.html', device=device_object, device_data=json_str)
 
 @app.route('/user/<user_id>')
 def user_profile(user_id):
