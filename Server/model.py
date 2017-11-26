@@ -32,14 +32,14 @@ def select_device(device_id):
 
 def select_device_data(device_id):
 	cur = db_conn.cursor()
-	cur.execute("SELECT * FROM device_data WHERE device_id=?", device_id)
+	cur.execute("SELECT * FROM device_data WHERE device_id=? ORDER BY id DESC LIMIT 16", device_id)
 
 	rows = cur.fetchall()
 	return rows
 
 def select_user(user_id):
 	cur = db_conn.cursor()
-	cur.execute("SELECT * FROM users WHERE id=? LIMIT 16", user_id)
+	cur.execute("SELECT * FROM users WHERE id=?", user_id)
 
 	rows = cur.fetchone()
 	return rows
