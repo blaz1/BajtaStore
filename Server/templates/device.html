@@ -10,20 +10,46 @@
 					active 
 				{% else %} 
 					inactive
-				{% endif %}
+				 {% endif %}
 			</p>
 </div>
 <div class="row">
-Last update: {{device_dat["time"]}}
+Last update: {{device_dat[0]["time"]}}
 </div>
 <div class="row">
-Temperature: {{device_dat["temperature"]}} &#8451;
+Temperature: {{device_dat[0]["temperature"]}} &#8451;
 </div>
 <div class="row">
-Humidity: {{device_dat["humidity"]}} %
+Humidity: {{device_dat[0]["humidity"]}} %
 </div>
 <div class="row">
-Motion: {% if device_dat["motion"] == 0 %} none {% else %} intruder
+Motion: {% if device_dat[0]["motion"] == 0 %} none {% else %} intruder {% endif %}
+</div>
+<div class="row">
+	<table>
+		<th>
+			<td>Time</td>
+			<td>Temperature</td>
+			<td>Humidity</td>
+			<td>Motion</td>
+		</th>
+	{% for data in device_data %}
+		<tr>
+			<td>
+				{{data["time"]}}
+			</td>
+			<td>
+				{{data["temperature"]}}
+			</td>
+			<td>
+				{{data["humidity"]}}
+			</td>
+			<td>
+				{{data["motion"]}}
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
 </div>
 <script type="text/javascript">
 setTimeout(function(){
