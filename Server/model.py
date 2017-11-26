@@ -23,6 +23,20 @@ def select_all_devices_from_user(user_id):
 	rows = cur.fetchall()
 	return rows
 
+def select_device(device_id):
+	cur = db_conn.cursor()
+	cur.execute("SELECT * FROM devices WHERE id=?", device_id)
+
+	row = cur.fetchone()
+	return row
+
+def select_device_data(device_id):
+	cur = db_conn.cursor()
+	cur.execute("SELECT * FROM device_data WHERE device_id=?", device_id)
+
+	rows = cur.fetchall()
+	return rows
+
 def insert_device_data(device_id, json_data):
 	cur = db_conn.cursor()
 	new_device_data_id = len(cur.execute("SELECT * FROM device_data").fetchall()) + 1

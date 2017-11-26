@@ -2,15 +2,11 @@
  
 {% block container %}
 <div class="row">
-	<h2>My devices</h2>
+	<h2>{{device[1]}}</h2>
 </div>
 <div class="row">
-	<p>Configure your devices and connect them with applications. Refresh the page to list new devices.</p>
-</div>
-<div class="row">
-	{% for device in devices %}
 		<div class="col-sm-4 device">
-			<h3><a href="{{ url_for('device', user_id=device[3], device_id=device[0])}}">{{device[1] }}</a></h3>
+			<h3>{{device[1] }}</h3>
 			<p>Status: 
 				{% if(device[2] == 1) %} 
 					active 
@@ -19,12 +15,16 @@
 				{% endif %}
 			</p>
 		</div>
+</div>
+<div class="row">
+	{% for device_dat in device_data %}
+		<p>device_Dat[1]</p>
 	{% endfor %}
 </div>
 <script type="text/javascript">
 setTimeout(function(){
    window.location.reload(1);
 }, 5000);
-
+	
 </script>
 {% endblock %}
