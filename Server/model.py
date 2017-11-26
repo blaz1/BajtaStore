@@ -26,5 +26,5 @@ def select_all_devices_from_user(user_id):
 def insert_device_data(device_id, json_data):
 	cur = db_conn.cursor()
 	new_device_data_id = len(cur.execute("SELECT * FROM device_data").fetchall()) + 1
-	cur.execute("INSERT INTO device_data VALUES (?, ?, ?)", new_device_data_id, json_data, device_id)
+	cur.execute("INSERT INTO device_data VALUES (?, ?, ?)", (new_device_data_id, json_data, device_id))
 	cur.commit()
