@@ -24,8 +24,6 @@ def devices(user_id):
 
 @app.route('/devices/data/<device_id>', methods=['POST'])
 def devices_data(device_id):
-	print("received POST")
 	data = request.get_json()
-	print(data)
 	insert_device_data(device_id, data)
 	return "OK"
