@@ -8,14 +8,10 @@
 	<p>Find apps best suited for your home and your available SRM modules.</p>
 </div>
 <div class="row">
-	<div class="col-sm">
-		<p>App1</p>
-	</div>
-	<div class="col-sm">
-		<p>App2</p>
-	</div>
-	<div class="col-sm">
-		<p>App3</p>
-	</div>
+  	{% for app in apps %}
+		<div class="col-sm-4 device">
+			<h3>{{app[1]}}</h3>
+		</div>
+	{% endfor %}
 </div>
 {% endblock %}

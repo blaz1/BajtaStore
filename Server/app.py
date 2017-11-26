@@ -9,7 +9,8 @@ def home():
 
 @app.route('/store')
 def store():
-	return render_template('store.html')
+	apps_list=select_all_apps()
+	return render_template('store.html', apps=apps_list)
 
 @app.route('/apps/<user_id>')
 def apps(user_id):
