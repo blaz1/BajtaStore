@@ -27,8 +27,11 @@ def device(user_id, device_id):
 	device_object=select_device(device_id)
 	device_data_object=select_device_data(device_id)
 	first_data=device_data_object[0][1]
-	print(first_data)
-	return render_template('device.html', device=device_object, device_data=device_data_object, first=first_data)
+	time=first_data["time"]
+	temp=first_data["temperature"]
+	humidity=first_data["humidity"]
+	motion=first_data["motion"]
+	return render_template('device.html', device=device_object, device_data=device_data_object, time=time, temp=temp, humidity=humidity, motion=motion)
 
 @app.route('/user/<user_id>')
 def user_profile(user_id):

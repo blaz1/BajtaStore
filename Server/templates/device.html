@@ -15,42 +15,16 @@
 </div>
 <div class="row">
 {{first}}
-Last update: {{first[0]}}
+Last update: {{time}}
 </div>
 <div class="row">
-Temperature: {{first[1]}} &#8451;
+Temperature: {{temp}} &#8451;
 </div>
 <div class="row">
-Humidity: {{first[2]}} %
+Humidity: {{humidity}} %
 </div>
 <div class="row">
-Motion: {% if first[3] == 0 %} none {% else %} intruder {% endif %}
-</div>
-<div class="row">
-	<table>
-		<th>
-			<td>Time</td>
-			<td>Temperature</td>
-			<td>Humidity</td>
-			<td>Motion</td>
-		</th>
-	{% for data in device_data %}
-		<tr>
-			<td>
-				{{data[1]["time"]}}
-			</td>
-			<td>
-				{{data[1]["temperature"]}}
-			</td>
-			<td>
-				{{data[1]["humidity"]}}
-			</td>
-			<td>
-				{{data[1]["motion"]}}
-			</td>
-		</tr>
-	{% endfor %}
-	</table>
+Motion: {% if motion == 0 %} none {% else %} intruder {% endif %}
 </div>
 <script type="text/javascript">
 setTimeout(function(){
