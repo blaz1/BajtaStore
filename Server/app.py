@@ -27,3 +27,10 @@ def devices_data(device_id):
 	data = request.get_json()
 	insert_device_data(device_id, data)
 	return "OK"
+
+@app.route('/devices/status/<device_id>', methods=['POST'])
+def devices_status(device_id):
+	data = request.get_json()
+	status = data['status']
+	update_device_status(device_id, status)
+	return "OK"

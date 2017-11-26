@@ -28,3 +28,8 @@ def insert_device_data(device_id, json_data):
 	new_device_data_id = len(cur.execute("SELECT * FROM device_data").fetchall()) + 1
 	cur.execute("INSERT INTO device_data(id, data, device_id) VALUES (?, ?, ?)", (new_device_data_id, json_data, device_id))
 	db_conn.commit()
+
+def update_device_status(device_id, status):
+	cur = db_conn.cursor()
+	cur.execute("UPDATE devices SET status=? WHERE id=?", status, device_id)
+	db_conn.commit()
