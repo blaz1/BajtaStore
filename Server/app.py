@@ -28,3 +28,4 @@ def devices_data(device_id):
 	data = request.get_json()
 	print(data)
 	insert_device_data(device_id, data)
+	return "OK"
