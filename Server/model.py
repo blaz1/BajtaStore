@@ -39,7 +39,7 @@ def select_device_data(device_id):
 
 def select_user(user_id):
 	cur = db_conn.cursor()
-	cur.execute("SELECT * FROM users WHERE user_id=?", user_id)
+	cur.execute("SELECT * FROM users WHERE id=?", user_id)
 
 	rows = cur.fetchone()
 	return rows
