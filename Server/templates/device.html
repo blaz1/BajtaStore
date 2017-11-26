@@ -14,16 +14,16 @@
 			</p>
 </div>
 <div class="row">
-Last update: {{device_data[0]["time"]}}
+Last update: {{first["time"]}}
 </div>
 <div class="row">
-Temperature: {{device_data[0]["temperature"]}} &#8451;
+Temperature: {{first["temperature"]}} &#8451;
 </div>
 <div class="row">
-Humidity: {{device_data[0]["humidity"]}} %
+Humidity: {{first["humidity"]}} %
 </div>
 <div class="row">
-Motion: {% if device_data[0]["motion"] == 0 %} none {% else %} intruder {% endif %}
+Motion: {% if first["motion"] == 0 %} none {% else %} intruder {% endif %}
 </div>
 <div class="row">
 	<table>
