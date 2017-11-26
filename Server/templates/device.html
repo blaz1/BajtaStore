@@ -14,17 +14,9 @@
 			</p>
 </div>
 <div class="row">
-{{first}}
-Last update: {{time}}
-</div>
-<div class="row">
-Temperature: {{temp}} &#8451;
-</div>
-<div class="row">
-Humidity: {{humidity}} %
-</div>
-<div class="row">
-Motion: {% if motion == 0 %} none {% else %} intruder {% endif %}
+{% for data in device_data %}
+	<p>{{data[1]}}</p>
+{% endfor %}
 </div>
 <script type="text/javascript">
 setTimeout(function(){
