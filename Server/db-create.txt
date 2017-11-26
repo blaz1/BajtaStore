@@ -8,7 +8,7 @@ CREATE TABLE users_apps (id INTEGER PRIMARY KEY, user_id INTEGER, app_id INTEGER
 
 CREATE TABLE devices (id INTEGER PRIMARY KEY, name TEXT, status BOOLEAN, user_id INTEGER, app_id INTEGER, FOREIGN KEY (user_id) REFERENCES users(id), FOREIGN KEY (app_id) REFERENCES apps(id));
 
-CREATE TABLE device_data (id INTEGER PRIMARY KEY AUTOINCREMENT, data TEXT, device_id INTEGER, FOREIGN KEY (device_id) REFERENCES devices(id));
+CREATE TABLE device_data (id INTEGER PRIMARY KEY, data TEXT, device_id INTEGER, FOREIGN KEY (device_id) REFERENCES devices(id));
 
 INSERT INTO users VALUES (1, "Blaz Artac", "artac.blaz@gmail.com", "+38631578083");
 INSERT INTO apps VALUES (1, "smart home manager");
