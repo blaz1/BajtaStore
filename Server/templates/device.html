@@ -5,7 +5,6 @@
 	<h2>{{device[1]}}</h2>
 </div>
 <div class="row">
-		<div class="col-sm-4 device">
 			<h3>{{device[1] }}</h3>
 			<p>Status: 
 				{% if(device[2] == 1) %} 
@@ -14,11 +13,10 @@
 					inactive
 				{% endif %}
 			</p>
-		</div>
 </div>
 <div class="row">
 	{% for device_dat in device_data %}
-		<p>device_Dat[1]</p>
+		<p>{{device_Dat[1]}}</p>
 	{% endfor %}
 </div>
 <script type="text/javascript">
