@@ -26,7 +26,7 @@ def devices(user_id):
 def device(user_id, device_id):
 	device_object=select_device(device_id)
 	device_data_object=select_device_data(device_id)
-	first_data=device_data_object[0][1]
+	first_data=json.loads(device_data_object[0][1])
 	return render_template('device.html', device=device_object, device_data=device_data_object, first=first_data)
 
 @app.route('/user/<user_id>')
