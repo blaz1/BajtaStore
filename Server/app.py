@@ -29,7 +29,7 @@ def device(user_id, device_id):
 	return render_template('device.html', device=device_object, device_data=device_data_object)
 
 @app.route('/user/<user_id>')
-def device(user_id):
+def user_profile(user_id):
 	user_object=select_user(user_id)
 	return render_template('user_profile.html', user=user_object)
 
