@@ -6,10 +6,10 @@
 </div>
 <div class="row">
 	<div>
-		<p>Name: {{user[1]}}</p>
-		<img src="{{ url_for('static', filename = 'blaz_artac.png') }}" />
-	</div>
-	<p>Email: {{user[2]}}</p>
+		<p>Name: {{user[1]}}</p><br>
+		<img class="img-rounded" src="{{ url_for('static', filename = 'blaz_artac.jpg') }}" />
+	</div><br>
+	<p>Email: {{user[2]}}</p><br>
 	<p>Telephone: {{user[3]}}</p>
 </div>
 {% endblock %}
