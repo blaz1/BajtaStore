@@ -29,4 +29,4 @@ def insert_device_data(device_id, json_data):
 	cur = db_conn.cursor()
 	print("new_device_data_id: ", new_device_data_id)
 	cur.execute("INSERT INTO device_data(id, data, device_id) VALUES (?, ?, ?)", (new_device_data_id, json_data, device_id))
-	#cur.commit()
+	cur.commit()
