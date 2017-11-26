@@ -34,9 +34,9 @@ def devices_data(device_id):
 	insert_device_data(device_id, data)
 	return "OK"
 
-@app.route('/devices/status/<device_id>', methods=['POST'])
-def devices_status(device_id):
+@app.route('/devices/status/<device_name>', methods=['POST'])
+def devices_status(device_name):
 	data = request.get_json()
 	status = data['status']
-	update_device_status(device_id, status)
+	update_device_status(device_name, status)
 	return "OK"

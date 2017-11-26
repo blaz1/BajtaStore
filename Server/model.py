@@ -43,7 +43,7 @@ def insert_device_data(device_id, json_data):
 	cur.execute("INSERT INTO device_data(id, data, device_id) VALUES (?, ?, ?)", (new_device_data_id, json_data, device_id))
 	db_conn.commit()
 
-def update_device_status(device_id, status):
+def update_device_status(device_name, status):
 	cur = db_conn.cursor()
-	cur.execute("UPDATE devices SET status=? WHERE id=?", status, device_id)
+	cur.execute("UPDATE devices SET status=? WHERE name=?", status, device_name)
 	db_conn.commit()
